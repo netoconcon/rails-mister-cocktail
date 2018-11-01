@@ -5,8 +5,17 @@
   <%= @cocktail.name %>
 </p>
 
+<% @cocktail.doses.each do |dose| %>
+  <tr>
+    <td><%= dose.ingredient.name %></td>
+    <td><%= dose.description %></td>
+    <br>
+  <% end %>
+
+  <br>
+
+<%= link_to 'Add Doses', new_cocktail_dose_path(@cocktail) %> |
 <%= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
 <%= link_to 'Back', cocktails_path %>
-
 
 
